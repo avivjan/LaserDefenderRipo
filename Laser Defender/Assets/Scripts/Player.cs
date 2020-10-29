@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
     {
         float newLaserYPos = transform.position.y + (PlayerHeight / 2);
         GameObject laser = Instantiate(LaserShoot, new Vector3(transform.position.x, newLaserYPos, transform.position.z), Quaternion.identity);
-        laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, SpeedOfLaserShoot);
+        laser.AddComponent<Rigidbody2D>().velocity = new Vector2(0, SpeedOfLaserShoot);
     }
     private void SetUpPlayerSizes()
     {

@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class EnemyPathing : MonoBehaviour
 {
-    [SerializeField] List<Transform> WayPoints;
-    [SerializeField] float speed = 2f;
-    private int nextWayPointIndex = 0;
+    WaveConfig waveConfig;
+    int nextWayPointIndex = 0;  
+    List<Transform> WayPoints;
+    float speed;
 
     // Start is called before the first frame update
     void Start()
     {
-        if ((WayPoints.Count == 0) || (WayPoints.Count == 1) || (WayPoints == null))
+        WayPoints = waveConfig.GetWayPoints();
+        speed = waveConfig.GetMoveSpeed();
+
+
+        if ((WayPoints.Count == 0) || (WayPoints.Count == 1))
         {
             Debug.Log("Enemy's Path has not enough way points");
             return;
-        }//Null Check.
-
-
+        }//Empty Check.
         transform.position = (Vector3)WayPoints[nextWayPointIndex]?.position;
         nextWayPointIndex++;
     }
-
-
 
     // Update is called once per frame
     void Update()
@@ -31,13 +32,17 @@ public class EnemyPathing : MonoBehaviour
     }
 
 
+    public void SetWaveConfig(WaveConfig waveConfig)
+    {
+        this.waveConfig = waveConfig;
+    }
 
     private void MoveFinishPathAndDestroy()
     {
-        if ((WayPoints.Count == 0) || (WayPoints.Count == 1) || (WayPoints == null))//Null Check.
-            {
+        if ((WayPoints.Count == 0) || (WayPoints.Count == 1))//Empty Check.
+        {
                 return;
-            }
+        }
 
 
         if (nextWayPointIndex <= WayPoints.Count - 1)

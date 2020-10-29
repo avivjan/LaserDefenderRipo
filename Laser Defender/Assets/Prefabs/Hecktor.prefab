@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3555751424717106900}
   - component: {fileID: 3555751424717106903}
   - component: {fileID: 3555751424717106902}
-  - component: {fileID: 395588870509274863}
+  - component: {fileID: 114065025931006858}
+  - component: {fileID: 114742573426451030}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Hecktor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +140,7 @@ PolygonCollider2D:
       - {x: -0.14541018, y: -0.2530918}
       - {x: -0.13499999, y: -0.25}
       - {x: -0.11960304, y: -0.28561544}
---- !u!114 &395588870509274863
+--- !u!114 &114065025931006858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,4 +152,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d8e2ab20ea26df43805167c09a0a6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WayPoints: []
+--- !u!114 &114742573426451030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555751424717106905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1bd4f6931fd59c4e872f456ce8f1d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+  widthOfShootingRange: 1.09
+  ProjectilesSpeed: 5
+  Projectile: {fileID: 4347191875104400083, guid: 8f38fdd1304f91f4dbd1d2fbc45c0406,
+    type: 3}
+  TimeBetweenShoots: 0.2

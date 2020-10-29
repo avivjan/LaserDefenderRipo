@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class LaserShreddeer : MonoBehaviour
+public class PlayerLaserShreddeer : MonoBehaviour
 {
     Camera Camera;
     [SerializeField] float AspectRatio = 9f / 16f;
@@ -21,7 +21,7 @@ public class LaserShreddeer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("LaserShoot"))
+        if (collision.gameObject.tag.Equals("Player Projectile"))
         {
             Destroy(collision.gameObject);
         }
